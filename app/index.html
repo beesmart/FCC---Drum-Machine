@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>starter react</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #power-switch {
+        margin:10px 0 0 2%;
+        height: 50px;
+      }
+      #power-switch:hover {
+        background-color: #adadad;
+        color: white;
+      }
+      #power-switch.switchOn {
+        background: green;
+        color: white;
+      }
+      #power-switch.switchOff {
+        background: red;
+        color: white;
+      }
+      .drum-pad {
+        display: inline-block;
+        margin:10px 0 0 2%;
+        flex-grow: 1;
+        height:100px;
+        width: calc(100% * (1/4) - 10px - 1px);
+      }
+      #drum-buttons {
+        width: 50%;
+        display: inline-block;
+        float: left;
+      }
+      #drum-controls {
+        width: 25%;
+        display: inline-block;
+        float: left;
+      }
+    </style> 
+  </head>
+  <body>
+    
+      <div id="drum-machine">
+        <!-- the Drum world app will be in here! -->
+      </div>
+    
+      <!-- glitch button and style -->
+ 
+    
+      <!-- bundle all the scripts! thanks to webpack -->
+      <script type="text/javascript" src="/bundle.js"></script>
+  </body>
+</html>
