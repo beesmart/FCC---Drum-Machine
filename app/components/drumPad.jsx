@@ -3,8 +3,7 @@ const React = require('react');
 class DrumPad extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
+
     this.clickMakeSound = this.clickMakeSound.bind(this);
     this.handleKey = this.handleKey.bind(this);
   
@@ -14,7 +13,8 @@ class DrumPad extends React.Component {
     if(this.props.powerSwitch === true){
         let targetSound = document.getElementById(soundId)
         targetSound.currentTime = 0;
-        targetSound.play(); 
+        targetSound.play();
+        this.props.getButtonClickId(soundId); 
     }
   }
   
@@ -39,11 +39,9 @@ class DrumPad extends React.Component {
          {
            this.props.soundStore.map((sound, i) => 
                <button id={sound.id} onKeyDown={this.handleKey} className="drum-pad" key={i} onClick={this.clickMakeSound.bind(this, sound.keyTrigger)}>
-                 <audio id={sound.keyTrigger}  src={sound.url} autostart="false"></audio>
-                <span>{sound.keyTrigger}</span>
-                <hr />
-                {sound.id}
-                  
+                 <audio id={sound.keyTrigger} className="clip" src={sound.url} autostart="false"></audio>
+                {sound.keyTrigger}
+  
                </button>)
          }
        </div>

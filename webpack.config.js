@@ -8,6 +8,9 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
   },
+  externals: {
+    fcc_test: 'fcc-test'
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },

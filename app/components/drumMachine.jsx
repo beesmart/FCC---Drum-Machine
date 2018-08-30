@@ -59,7 +59,9 @@ class DrumMachine extends React.Component {
     super(props);
     this.state = {
       storeUsed: SoundStore1,
-      power: true
+      power: true,
+      soundId: 0,
+      soundText: "Hit the buttons to start a beat"
     }
   }
   
@@ -69,14 +71,22 @@ class DrumMachine extends React.Component {
       power: !prevState.power
     }));
   }
-  
+  // We're passing this down to the child - drumPad - grabbing the soundID and passing it back up to display as display text.
+  getButtonClickId(soundId){
+    let result = this.state.storeUsed.filter(sound => {
+      return sound.keyTrigger === soundId
+    })
+    this.setState({
+       soundText: result[0].id
+    });
+  }
 
 
   render() {
      return (
        <div id="display" >
-         <DrumPad soundStore={this.state.storeUsed} powerSwitch={this.state.power}/>
-         <DrumControls clickPower={this.clickPower.bind(this)} powerSwitch={this.state.power} />
+         <DrumPad soundStore={this.state.storeUsed} powerSwitch={this.state.power} getButtonClickId={this.getButtonClickId.bind(this)}/>
+         <DrumControls clickPower={this.clickPower.bind(this)} powerSwitch={this.state.power} soundText={this.state.soundText}/>
        </div>
       );
   }
@@ -85,3 +95,4 @@ class DrumMachine extends React.Component {
 
 
 module.exports = DrumMachine;
+

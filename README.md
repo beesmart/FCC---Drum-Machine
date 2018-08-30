@@ -15,13 +15,16 @@ This app is following the FreeCodeCamp Curriculum
 * Buttons respond and function correctly
 * Power switch added and working
 * Button keys correspond with users keyboard
+* Machine displays feedback : clicked button name
 
 
 ---
 
 ### ToDo
 
-* User Story #7: When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).
+* Add Volume slider
+* Add additional soundbanks
+* Improve CSS Styles
 
 ---
 
