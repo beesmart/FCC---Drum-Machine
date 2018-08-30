@@ -7,9 +7,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
     <style>
+      #display {
+        padding: 50px 15% 0;
+      }
       #power-switch {
-        margin:10px 0 0 2%;
         height: 50px;
       }
       #power-switch:hover {
@@ -31,15 +35,23 @@
         height:100px;
         width: calc(100% * (1/4) - 10px - 1px);
       }
+      #drum-rightbar {
+        width: 25%;
+        float: left;
+      }
       #drum-buttons {
         width: 50%;
         display: inline-block;
         float: left;
       }
       #drum-controls {
-        width: 25%;
-        display: inline-block;
+        width: 100%;
         float: left;
+      }
+      #drum-iface {
+        width: 100%;
+        float: left;
+        padding-top: 20px;
       }
     </style> 
   </head>
@@ -53,6 +65,9 @@
  
     
       <!-- bundle all the scripts! thanks to webpack -->
+    <script
+      src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+    </script>
       <script type="text/javascript" src="/bundle.js"></script>
   </body>
 </html>
